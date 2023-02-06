@@ -1,0 +1,149 @@
+body{
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+form{
+    width: 250px;
+    background: #fff;
+    padding: 20px;
+    margin: 8% auto 0;
+    text-align: center;
+    border-radius: 25px;
+    background-image: linear-gradient( to right, #e6cfb0, #e7a0a0, #a289b3);
+}
+
+
+label{
+    width: 100px;
+    display: inline-block;
+    
+}
+
+h2{
+    background: #380b21; 
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -mo-text-fill-color: transparent;
+}
+
+
+.name{
+    font-size: 20px;
+}
+.surname{
+    font-size: 20px;
+}
+.email{
+    font-size: 20px;
+}
+.username{
+    font-size: 20px;
+}
+.phone{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.radio{
+    margin-top: 5px;
+    font-size: 20px;
+}
+.checkbox{
+    font-size: 15px;
+}
+
+
+
+/*Detail*/
+
+details summary {
+    list-style: none;
+}
+    
+.first-sum:after{
+    background:#000;
+    border-radius: 5px;
+    content: "+";
+    color: #fff;
+    float: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: -5px 10px 0 0;
+    text-align: center;
+    width: 25px;
+}
+    
+.first[open] .first-sum:after {
+    content: "-";
+}
+    
+.first-sum{
+    cursor: pointer;
+}
+
+
+
+/*Btn*/
+
+button{
+    color: #000;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 10px 5px;
+    border: none;
+    outline: #555;
+    cursor: pointer;
+    background-color: rgb(44, 248, 122);
+}
+    
+
+.modal-content{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.content-active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal{
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.modal button{
+    background-color: rgb(102, 210, 243);
+    cursor: pointer;
+    border-radius: 14px;
+    
+}
+
+
+.modal button a{
+    text-decoration: none;
+    color: black;
+}
+    
+    
