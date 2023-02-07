@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/estilos.css" type="text/css">
         <title>Aridaners - Proyecto PHP</title>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     </head>
 
     <body>
     <div id="contenido">
         <div id="cabecera">
-            <h1>Probando web del proyecto</h1>
-        </div> <!-- fin de cabecera -->
+            <h1>Aridaners - Proyecto PHP con Base de Datos</h1>
+        </div>
         <div id="principal">
             <?php include $menu?>  
             <div id="derecha">
