@@ -14,3 +14,4 @@
         <div id="principal">
             <?php include $menu?>  
             <div id="derecha">
+hola
