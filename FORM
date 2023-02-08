@@ -1,5 +1,6 @@
-<php
-include "cabecera.php";
+<?php
+  $menu = 'menu.php';
+  include "cabecera.php";
 ?>
 
 <form action="process.php" method="POST">
@@ -31,4 +32,8 @@ include "cabecera.php";
   </div>
 </form>
 
-< include "pie.php"?>
+<?php 
+
+  include "pie.php"
+
+?>
