@@ -1,14 +1,7 @@
 <?php
       
-    $menu = "menu.php";
-    include "cabecera.php";
-
-?>
-
-<p>pagina de index de prueba</p>
-<p> de index de prueba</p>
-<?php
-    
-    include "pie.php";
+    include "conexion.php";
+    require_once 'utils.php';
+    require_once 'modelo.php';
     
 ?>
