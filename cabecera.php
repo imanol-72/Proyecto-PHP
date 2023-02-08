@@ -13,5 +13,4 @@
             <h1>Aridaners - Proyecto PHP con Base de Datos</h1>
         </div>
         <div id="principal">
-            <?php include $menu?>  
-            <div id="derecha">
+            <?php include $menu?>
