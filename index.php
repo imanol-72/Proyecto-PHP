@@ -1,7 +1,6 @@
 <?php
     
    
- 
    include 'vista_inicio.php';
    
    
@@ -11,7 +10,7 @@
           $errores = array();
           if (empty($texto))
           {
-              $errores['nombre'] = "Introduce el nombre";
+              $errores['titulo'] = "Introduce el nombre";
           }
            if (empty($duracion))
           {
@@ -54,8 +53,7 @@
               include "form_buscar.php";
               exit();
           }
-          
-    }
+          $resultado= " ";
 $resultado = "Nombre: ".htmlspecialchars(trim($texto))."
 Duracion:".htmlspecialchars(trim($duracion)).
 "
@@ -75,4 +73,6 @@ foreach ($actores as $valor)
 {
 $resultado .= htmlspecialchars(trim($valor))." ";
 }
+    }
+ 
 ?>
