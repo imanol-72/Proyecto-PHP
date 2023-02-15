@@ -1,0 +1,60 @@
+h1
+{
+    color: #036843;
+    text-align: center;
+}
+
+form 
+{
+  background-color: #fff1f1;
+  padding: 30px;
+  box-shadow: 0px 0px 10px #cccccc;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #000000;
+  margin: 0 auto;
+  width: 600px;
+}
+
+input, select 
+{
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+input[type = "submit"] 
+{
+    width: 100%;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+form input[type = "radio"]
+{
+    margin-left: 2em;
+    width: 2em;
+    float: none;
+}
+
+form input[type = "checkbox"]
+{
+    margin-left: 2em;
+    width: 2em;
+    float: none;
+}
+
+form input[type = "submit"]
+{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}

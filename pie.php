@@ -1,8 +1,9 @@
-                </div>
-        </div> 
-        <footer>
-            <p class="website__rights">© ARIDANERS 2023. Todos los derechos reservados</p>
-        </footer>
-        <script src="/js/scrollbar.js"></script>
+        </div>     <!-- fin de principal-->
+    <div id="pie">
+            <p class="copyright">
+                &copy; <?php echo date("Y"); ?> Aridaners
+            </p>
+     </div>
+    </div><!-- fin de contenido -->
     </body>
 </html>
