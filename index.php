@@ -1,4 +1,9 @@
 ﻿<?php
+require_once 'utils.php';
+require_once 'conexion.php';
+require_once 'modelo.php';
+
+
 
 if (!isset($_POST['enviar']))
 {
@@ -64,4 +69,17 @@ $resultado = "Nombre: ".htmlspecialchars(trim($titulo)).
             }
 
 include "form_buscar.php";
+
+
+   if (isset($_GET['opcion']) && $_GET['opcion'] == 'listar') {
+          // generar consulta 
+          $sql = "select id,titulo,fechestreno,duracion,genero from peliculas;";
+          $peliculas = obtenerPeliculas($conexion, $sql);
+          include "listar.php";
+          exit();
+      }
+
+      $sql = "select titulo,duracion,fechestreno from peliculas";
+      $productos = obtenerPeliculas($conexion, $sql);
+      include "vista_inicio.php";
 ?>
