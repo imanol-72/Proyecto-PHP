@@ -1,0 +1,260 @@
+
+root { 
+    display: block;
+}
+body {
+    height: 100%;
+    background-image: url(../imagenes/fondo.jpg);
+    background-position: 100%;
+    color: blue;
+    line-height: 1.5;
+    font-family: "Century Gothic", "Gill Sans", Arial, sans-serif;
+    font-size: 100%;
+    text-align: center;
+}
+
+#contenido {
+    width: 960px;
+    background: beige;
+    margin: 20px auto;
+    padding: 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    min-height: 600px;
+    -webkit-box-shadow: 11px 11px 40px -7px rgba(0,0,0,0.61);
+    -moz-box-shadow: 11px 11px 40px -7px rgba(0,0,0,0.61);
+    box-shadow: 11px 11px 40px -7px rgba(0,0,0,0.61);
+}
+
+#principal {    
+    padding: 5px;
+    min-height: 400px;
+}
+
+#cabecera {
+    height: 90px;
+    margin: 0 auto; 
+    background-color: transparent;
+    border: 2px solid  darkslateblue;
+}
+
+#cabecera h1{
+    text-align: center;
+    color: brown;
+    font-family: "Rockwell";
+    letter-spacing: 3px;
+}
+
+#menu {
+    background-color: lightblue;  
+    border: 1px solid wheat;
+    width: 100%;
+    height: 3em;
+    color: white;
+    font-family: "Rockwell";
+    font-size: 19px;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: brown;
+}
+
+#menu ul {     
+    list-style-type: none;
+    text-align: center;
+}
+
+#menu ul li {
+    display: inline;
+    border-right: 1px solid wheat;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#principal h1, h2 {
+    text-align: center;
+}
+
+
+#pie {
+    margin: 0 auto;
+    color: brown;
+    border-top:  3px solid #efe1e7;
+    background-color: lightblue;
+    min-height: 50px;;
+    width: 60%;
+}
+
+#pie p {
+    text-align: center;
+    font-size: smaller;
+
+}
+
+h1, h2, h3, h4 {
+    color: darkslategray;
+}
+
+table {
+    border: 1px solid forestgreen;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 40px;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid forestgreen;
+    padding: .4em .5em .4em .5em;
+    vertical-align: top;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #C4F1FF;
+}
+
+th {
+    font-weight: bold;
+    background-color: #a2c9e1;
+}
+
+label {
+    width: 10em;
+    padding-right: 1em;
+    float: left;
+}
+
+label.radio{
+    width: 2em;
+}
+
+br {
+    clear: left;
+}
+
+.resultado {
+    margin-top: 5em;
+    padding: 1px;
+    color: darkslateblue;
+    margin-left: 10em;
+}
+
+.error {
+    padding-left:  5px;
+    color:  red;
+    font-size: small;
+}
+
+   /* Formulario  */
+
+h1 {
+    color: #036843;
+    text-align: center;
+}
+
+#form {
+  background-color: #fff1f1;
+  padding: 30px;
+  box-shadow: 0px 0px 10px #cccccc;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #000000;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 600px;
+  width: 70%;
+}
+
+.cajas_form {
+    float: left;
+    text-align: center;
+    width: 200px;
+    margin-left: 10px;
+}
+
+input, select  {
+    width: 90%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+form input[type = "radio"]
+{
+    width: 2em;
+    float: none;
+}
+
+form input[type = "checkbox"]
+{
+    width: 2em;
+    float: none;
+}
+
+/* Botón del formulario */
+
+
+.cssbuttons-io-button {
+    margin: auto;
+    margin-top: 30px;
+    background: #A370F0;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: 1px solid;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
