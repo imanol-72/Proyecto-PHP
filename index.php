@@ -32,23 +32,6 @@
              $ano = $_POST['ano'];
          }
 
-         if (!isset($_POST['edad']))
-         {
-             $errores['edad'] = "Seleccione el público objetivo.";
-         }
-         else
-         {
-             $edad = $_POST['edad'];
-         }
-
-         if (!isset($_POST['actores']))
-         {
-             $errores['actores'] = "Seleccione algún actor.";
-         }
-         else
-         {
-             $actores = $_POST['actores'];
-         }
 
          if (!empty($errores))
          {
@@ -58,11 +41,9 @@
          $titulo = mysqli_real_escape_string($conexion, $titulo);
          $genero = mysqli_real_escape_string($conexion, $genero);
          $ano = mysqli_real_escape_string($conexion, $ano);
-         $edad = mysqli_real_escape_string($conexion, $edad);
-         $actores = mysqli_real_escape_string($conexion, $actores);
+       
 
-          $sql = "SELECT  titulo, genero, fechestreno, rangoedad, nombre FROM peliculas p JOIN actores a ON p.id=a.codact
-                           WHERE p.titulo LIKE '%$titulo%' and genero=$genero and fechestreno=$ano and rangoedad=$edad and nombre=$actores;";
+          $sql = "SELECT  titulo, genero, fechestreno FROM peliculas p WHERE p.titulo LIKE '%$titulo%' and genero=$genero and fechestreno=$ano";
 
           $peliculas = obtenerPeliculas($conexion, $sql);
           include "form_buscar.php";
