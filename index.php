@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     require_once 'utils.php';
     require_once 'conexion.php';
     require_once 'modelo.php';
@@ -41,9 +41,23 @@
          $titulo = mysqli_real_escape_string($conexion, $titulo);
          $genero = mysqli_real_escape_string($conexion, $genero);
          $ano = mysqli_real_escape_string($conexion, $ano);
-       
+         
+         switch ($ano)
+         {
+             case 'A' : $tex="select fechestreno between 2000 and 2005";
+                 break;
+             case 'B' : $tex="select fechestreno between 2006 and 2010";
+                 break;
+             case 'B' : $tex="select fechestreno between 2011 and 2015";
+                 break;
+             case 'D' : $tex="select fechestreno between 2016 and 2020";
+                 break;
+             case 'E' : $tex="select fechestreno > 2021";
+                 break;
+           
+         }
 
-          $sql = "SELECT  titulo, genero, fechestreno FROM peliculas p WHERE p.titulo LIKE '%$titulo%' and genero=$genero and fechestreno=$ano";
+          $sql = "SELECT  titulo, genero, fechestreno FROM peliculas p WHERE p.titulo LIKE '%$titulo%' and genero = '$genero' and fechestreno = '$ano'";
 
           $peliculas = obtenerPeliculas($conexion, $sql);
           include "form_buscar.php";
