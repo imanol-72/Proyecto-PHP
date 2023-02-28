@@ -40,32 +40,7 @@
                 <input type="radio" name="ano" value="E" <?php  if (isset($ano)&& ($ano == "E")){echo 'checked = "checked"';} ?>>2021 +<br>
             </div>
 
-            <div class="cajas_form">
-                <h3>Público</h3>
-                <input type="checkbox" checked="checked" name="edad[]" value="todos" <?php  if (isset($edad)&& in_array("todos", $edad)){echo 'selected = "selected"';} ?>>Todos los públicos<br>
-                <input type="checkbox" name="edad[]" value="+6" <?php  if (isset($edad)&& in_array("+6", $edad)){echo 'selected = "selected"';} ?>>+ 6<br>
-                <input type="checkbox" name="edad[]" value="+12"<?php  if (isset($edad)&& in_array("+12", $edad)){echo 'selected = "selected"';} ?>>+12<br>
-                <input type="checkbox" name="edad[]" value="+18"<?php  if (isset($edad)&& in_array("+18", $edad)){echo 'selected = "selected"';} ?>>+18<br>
 
-            <span class="error"> 
-                <?php if (isset($errores['edad'])) echo $errores['edad'] ?>   
-            </span><br />
-            </div>
-
-            <div class="cajas_form">
-            <h3>Actores Famosos</h3>
-                <select name="actores[]" size="4" multiple="multiple"> 
-                <option value="Brad Pitt"  <?php if (isset($actores) && in_array("Brad Pitt", $actores)) echo "selected = 'selected'" ?>  >Brad Pitt </option>
-                <option value="Johnny Depp"  <?php if (isset($actores) && in_array("Johnny Depp", $actores)) echo "selected = 'selected'" ?>  >Johnny Depp</option>
-                <option value="Bruce Willis" <?php if (isset($actores) && in_array("Bruce Willis", $actores)) echo "selected = 'selected'" ?>  >Bruce Willis</option>
-                <option value="Leonardo DiCaprio" <?php if (isset($actores) && in_array("Leonardo DiCaprio", $actores)) echo "selected = 'selected'" ?>  >Leonardo DiCaprio</option>
-                <option value="Angelina Jolie" <?php if (isset($actores) && in_array("Angelina Jolie", $actores)) echo "selected = 'selected'" ?>  >Angelina Jolie</option>
-                <option value="Scarlett Johansson" <?php if (isset($actores) && in_array("Scarlett Johansson", $actores)) echo "selected = 'selected'" ?>  >Scarlett Johansson</option>
-            </select><br />
-            <span class='error'>
-                <?php if (isset($errores['actores'])) echo $errores['actores'] ?>
-            </span>
-            </div>
         
         <br /><label>&nbsp;</label>
         
