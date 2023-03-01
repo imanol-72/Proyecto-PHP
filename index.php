@@ -15,6 +15,7 @@
     if (isset($_POST['enviar']))
     {
          $titulo = trim($_POST['titulo']);
+         $genero = trim($_POST['genero']);
          $errores = array();
 
          if (empty($titulo))
@@ -22,14 +23,13 @@
              $errores['titulo'] = "Introduzca un título";
          }
 
-         if (isset($_POST['genero']))
-         {
-             $genero = $_POST['genero'];
-         }
-
          if (isset($_POST['ano']))
          {
              $ano = $_POST['ano'];
+         }
+         else
+         {
+             $errores['ano']= "Introduce el año de estreno.";
          }
 
 
@@ -44,20 +44,19 @@
          
          switch ($ano)
          {
-             case 'A' : $tex="select fechestreno between 2000 and 2005";
+             case 'A': $tex = "(fechestreno >= 2003)";
                  break;
-             case 'B' : $tex="select fechestreno between 2006 and 2010";
+             case 'B': $tex = "(fechestreno >= 2006)";
                  break;
-             case 'B' : $tex="select fechestreno between 2011 and 2015";
+             case 'C': $tex = "(fechestreno >= 2011)";
                  break;
-             case 'D' : $tex="select fechestreno between 2016 and 2020";
+             case 'D': $tex = "(fechestreno >= 2016)";
                  break;
-             case 'E' : $tex="select fechestreno > 2021";
+             case 'E': $tex = "(fechestreno >= 2021)";
                  break;
-           
          }
 
-          $sql = "SELECT  titulo, genero, fechestreno FROM peliculas p WHERE p.titulo LIKE '%$titulo%' and genero = '$genero' and fechestreno = '$ano'";
+          $sql = "SELECT  titulo, genero, fechestreno FROM peliculas p WHERE p.titulo LIKE '%$titulo%' and genero = '$genero' and $tex";
 
           $peliculas = obtenerPeliculas($conexion, $sql);
           include "form_buscar.php";
