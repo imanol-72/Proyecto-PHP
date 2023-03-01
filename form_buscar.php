@@ -32,13 +32,15 @@
         
             <div class="cajas_form">
                 <h3>Años de estreno</h3>
-                <input type="radio" checked="checked" name="ano" value="A" <?php  if (isset($ano)&& ($ano == "A")){echo 'checked = "checked"';} ?>>2000 - 2005<br>
+                <input type="radio" name="ano" value="A" <?php  if (isset($ano)&& ($ano == "A")){echo 'checked = "checked"';} ?>>2000 - 2005<br>
                 <input type="radio" name="ano" value="B" <?php  if (isset($ano)&& ($ano == "B")){echo 'checked = "checked"';} ?>>2006 - 2010<br>
                 <input type="radio" name="ano" value="C" <?php  if (isset($ano)&& ($ano == "C")){echo 'checked = "checked"';} ?>>2011 - 2015<br>
                 <input type="radio" name="ano" value="D" <?php  if (isset($ano)&& ($ano == "D")){echo 'checked = "checked"';} ?>>2016 - 2020<br>
                 <input type="radio" name="ano" value="E" <?php  if (isset($ano)&& ($ano == "E")){echo 'checked = "checked"';} ?>>2021 +<br>
             </div>
-
+            <span class="error" > 
+                <?php if (isset($errores['ano'])) echo $errores['ano'] ?>
+            </span><br />  
 
         
         <br /><label>&nbsp;</label>
@@ -55,15 +57,18 @@
     </div>
 </form>
 <?php
+      echo "<div class='resultado'>";
         if (isset($peliculas))
-     {
-         foreach ($peliculas as $pelicula)
-         {
-             echo "<div class ='pelicula'>";
-             echo filtrarDato($pelicula['titulo']." -- ".$pelicula['genero'])." -- ".filtrarDato($pelicula['fechestreno']);
-             echo "</div>";
-         }
-     }
+        {
+            echo "Resultado de la búsqueda:";
+            foreach ($peliculas as $pelicula)
+            {
+                echo "<div class ='pelicula'>";
+                echo "<br/>".filtrarDato($pelicula['titulo']." -- ".$pelicula['genero'])." -- ".filtrarDato($pelicula['fechestreno']);
+                echo "</div>";
+            }
+        }
+        echo "</div>";
    
     include "pie.php";
 ?>
