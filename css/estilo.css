@@ -1,8 +1,4 @@
-root { 
-    display: block;
-}
 body {
-    height: 100%;
     background-image: url(../imagenes/fondo.jpg);
     background-position: 100%;
     color: blue;
@@ -10,6 +6,9 @@ body {
     font-family: "Century Gothic", "Gill Sans", Arial, sans-serif;
     font-size: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
 }
 
 #contenido {
@@ -82,12 +81,17 @@ body {
 
 
 #pie {
-    margin: 0 auto;
+    height: 150px;
+    padding: 5px;
     color: brown;
-    border-top:  3px solid #efe1e7;
     background-color: lightblue;
-    min-height: 50px;;
-    width: 60%;
+    width: 99%;
+    margin-top: auto;
+}
+
+#pie img {
+    width: 90px;
+    height: 90px;
 }
 
 #pie p {
