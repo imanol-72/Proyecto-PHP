@@ -68,7 +68,9 @@ INSERT INTO `directores` (`CODDIR`, `DNI`, `NOMBRE`, `SALARIO`, `FECHNACI`) VALU
 ('1', '65945407G', 'CATE SHORTLAND', 5000, '1980-07-07'),
 ('2', '69420911R', 'GORE VERBINSKI', 4500, '1980-08-24'),
 ('3', '62086825P', 'ANDREW STANTON', 4000, '1980-06-27'),
-('4', '68310365U', 'ANTOINE FUQUA', 7000, '1980-07-11');
+('4', '68310365U', 'ANTOINE FUQUA', 7000, '1980-07-11'),
+('5', '64738271L', 'ALEJANDRO GONZALEZ', 6800, '1975-02-28'),
+('6', '68372981H', 'M. NIGHT SHYAMALAN', 8500, '1982-03-18');
 
 -- --------------------------------------------------------
 
@@ -95,7 +97,9 @@ INSERT INTO `peliculas` (`ID`, `TITULO`, `FECHESTRENO`, `DURACION`, `GENERO`, `R
 ('1', 'BLACK WIDOW', '2021-02-08', '02:13:24', 'ACCIÓN', '', '1', '1'),
 ('2', 'PIRATAS DEL CARIBE', '2003-07-15', '02:40:54', 'BÉLICO', '', '2', '2'),
 ('3', ' BUSCANDO A NEMO ', '2003-04-10', '01:40:24', 'INFANTIL', '', '3', '3'),
-('4', 'LAGRIMAS DEL SOL', '2003-08-14', '02:22:24', 'DRAMA', '', '4', '4');
+('4', 'LAGRIMAS DEL SOL', '2003-08-14', '02:22:24', 'DRAMA', '', '4', '4'),
+('5', 'EL RENACIDO', '2015-08-14', '02:36:58', 'ACCIÓN', '', '5', '5'),
+('6', 'GLASS', '2019-01-13', '02:09:33', 'DRAMA', '', '6', '6');
 
 -- --------------------------------------------------------
 
@@ -116,7 +120,9 @@ INSERT INTO `peliculas_actores` (`ID_PELI`, `CODACT`) VALUES
 ('1', '1'),
 ('2', '2'),
 ('3', '3'),
-('4', '4');
+('4', '4'),
+('5', '5'),
+('6', '6');
 
 -- --------------------------------------------------------
 
@@ -140,7 +146,9 @@ INSERT INTO `productoras` (`CODPROD`, `PAIS`, `NOMBRE`, `NUMEPMPLEADOS`, `FECHFU
 ('1', 'ESTADOS UNIDOS', 'WARNER BROS', 10000, '1960-02-14'),
 ('2', 'SUECIA', 'WALT DISNEY', 5500, '1978-12-21'),
 ('3', 'ESPAÑA', 'ATRESMEDIA', 9000, '1986-11-23'),
-('4', 'CHINA', 'NBC UNIVERSAL', 30000, '1967-09-12');
+('4', 'CHINA', 'NBC UNIVERSAL', 30000, '1967-09-12'),
+('5', 'ESTADOS UNIDOS', 'CENTURY FOX', 6000, '1970-10-26'),
+('6', 'ESTADOS UNIDOS', 'WALT DISNEY', 8000, '1957-02-25');
 
 --
 -- Índices para tablas volcadas
