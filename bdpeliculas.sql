@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-02-2023 a las 10:20:05
+-- Tiempo de generación: 06-03-2023 a las 18:07:56
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,6 @@ CREATE TABLE `actores` (
   `CODACT` varchar(2) NOT NULL,
   `DNI` varchar(9) NOT NULL,
   `NOMBRE` varchar(50) NOT NULL,
-  `SALARIO` int(11) NOT NULL,
   `FECHNACI` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,13 +38,13 @@ CREATE TABLE `actores` (
 -- Volcado de datos para la tabla `actores`
 --
 
-INSERT INTO `actores` (`CODACT`, `DNI`, `NOMBRE`, `SALARIO`, `FECHNACI`) VALUES
-('1', '73519049A', 'BRAD PITT', 3000, '1995-02-01'),
-('2', '65945210G', 'JHONNY DEPP', 3500, '1979-05-14'),
-('3', '65164590T', 'BRUCE WILLIS ', 2400, '1992-11-26'),
-('4', '72791345V', 'LEONARDO DI CAPRIO', 2900, '2000-07-29'),
-('5', '73481904C', 'SCARLETT JOHANSSON', 1500, '1984-02-16'),
-('6', '43523049E', 'ALEXANDER GOULD', 4700, '1976-05-03');
+INSERT INTO `actores` (`CODACT`, `DNI`, `NOMBRE`, `FECHNACI`) VALUES
+('1', '73519049A', 'BRAD PITT', '1995-02-01'),
+('2', '65945210G', 'JHONNY DEPP', '1979-05-14'),
+('3', '65164590T', 'BRUCE WILLIS ', '1992-11-26'),
+('4', '72791345V', 'LEONARDO DI CAPRIO', '2000-07-29'),
+('5', '73481904C', 'SCARLETT JOHANSSON', '1984-02-16'),
+('6', '43523049E', 'ALEXANDER GOULD', '1976-05-03');
 
 -- --------------------------------------------------------
 
