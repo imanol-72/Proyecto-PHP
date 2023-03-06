@@ -2,7 +2,66 @@
     require_once 'utils.php';
     require_once 'conexion.php';
     require_once 'modelo.php';
-        
+
+
+    /* Modificar */   
+     if (isset($_GET['oper']) && $_GET['oper'] == 'editar')
+      {
+          $mensaje = 'Registro modificado correctamente';
+      }
+     // se ha pulsado el botón editar  en form_editar.php
+      if (isset($_POST['accion']))
+      {
+          $codact = mysqli_real_escape_string($conexion, $_POST['codact']);
+          // recoger los datos del formulario y valida
+          $dni = trim($_POST['dni']);
+          $nombre = trim($_POST['nombre']);
+          $fechnaci = trim($_POST['fechnaci']);
+          $errores = validar($nombre, $dni, $salario, $fechnaci);
+          if (!empty($errores))
+          {
+              // ha habido errores
+              include "forrm_editar.php";
+              exit();
+      }
+
+          $dni = mysqli_real_escape_string($conexion, $dni);
+          $nombre = mysqli_real_escape_string($conexion, $nombre);
+          $fechnaci = mysqli_real_escape_string($conexion, $fechnaci);
+
+          // consulta de actualización en la BD
+          $sql = "UPDATE actores SET dni = '$dni',
+                                    nombre = '$nombre',
+                                    fechnaci = '$fechnaci'
+                                    WHERE codact = '$codact' ";
+          modificarActor($conexion, $sql);
+          header('Location: index.php?oper=editar');
+          exit();
+     }
+      // se ha pulsado el botón editar  en vista_editar.php
+     if (isset($_POST['editar']))
+     {
+          $codact = mysqli_real_escape_string($conexion, $_POST['codact']);
+          // leo el registro con el Codigo de actor trasmitido y que hay que modificar
+          $sql = "SELECT dni, nombre, fechnaci FROM actores   ";
+          $fila = obtenerActor($conexion, $sql);          
+          $dni = $fila['dni'];
+          $nombre = $fila['nombre'];
+          $fechnaci = $fila['fechnaci'];
+          include "forrm_editar.php";
+          exit();
+    }
+    
+    
+    if (isset($_GET['opcion']) && $_GET['opcion'] == 'editar') {
+              $sql = 'SELECT dni, nombre, fechnaci FROM actores'
+                      ;
+              $actorese = obtenerActores($conexion, $sql);
+              include "vista_editar.php";
+              exit();
+    }
+
+
     /* Borrar */
 
     if (isset($_GET['oper']) && $_GET['oper'] == 'borrar')
