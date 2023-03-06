@@ -2,7 +2,32 @@
     require_once 'utils.php';
     require_once 'conexion.php';
     require_once 'modelo.php';
+    
 
+    if (isset($_GET['oper']) && $_GET['oper'] == 'borrar')
+    {
+        $mensaje = 'Registro borrado correctamente';
+    }
+
+    if (isset($_POST['borrar']))
+    {
+        $id = mysqli_real_escape_string($conexion, $_POST['id']);
+        $sql= "DELETE FROM peliculas where ID = '$id'";
+        borrarPelicula($conexion, $sql);
+        header('Location: index.php?oper=borrar');
+        exit();
+    }
+    
+     if (isset($_GET['opcion']) && $_GET['opcion'] == 'borrar')
+     {
+          $sql = 'SELECT titulo,duracion,fechestreno,id FROM peliculas';
+          $peliculas = obtenerPeliculas($conexion, $sql);
+          include "vista_borrar.php";
+          exit();
+     }
+      
+      
+    
     if (isset($_GET['opcion']) && $_GET['opcion'] == 'actores') 
         {
               $sql = "select nombre,salario,fechnaci from actores";
