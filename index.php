@@ -3,69 +3,7 @@
     require_once 'conexion.php';
     require_once 'modelo.php';
         
-       if (isset($_GET['oper']) && $_GET['oper'] == 'insertar')
-      {
-          $mensaje = 'Registro insertado correctamente';
-      }
-
-      // se ha hecho click en el enlace Insertar
-      if (isset($_GET['opcion']) && $_GET['opcion'] == 'inser')
-      {
-          include "form_insertar.php";
-          exit();
-      }
-    
-           if (isset($_POST['insertar']))
-                {
-          // recoger los datos del formulario y validar
-          $nombre = trim($_POST['nombre']);
-           $salario = trim($_POST['salario']);
-          $dni = trim($_POST['dni']);
-          $fech_naci = trim($_POST['fechnaci']);
-         $errores = array();
-           
-         
-         if (empty($nombre))
-         {
-             $errores['nombre'] = "Introduzca un nombre";
-         }
-         if (empty($dni))
-         {
-             $errores['dni'] = "Introduzca un dni";
-         }
-          if (!empty($errores))
-          {
-              // ha habido errores
-              include "form_insertar.php";
-              exit();
-          }
-        
-         
-          $nombre = mysqli_real_escape_string($conexion, $nombre);
-          $salario = mysqli_real_escape_string($conexion, $salario);
-          $dni = mysqli_real_escape_string($conexion, $dni);
-          $fech_naci = mysqli_real_escape_string($conexion, $fech_naci);
-           $sql_1="select count(*) as codact1 from actores";
-    $cod_act = obtenerPeliculas($conexion, $sql_1);
-    //$total=0;
-    foreach ($cod_act as $cod_act1){
-        $cod_act1=$cod_act1['codact1'] + 1;
-    }
-    $cod_act1 = mysqli_real_escape_string($conexion, $cod_act1);
-    // consulta de inserci&oacute;n en la BD
-    
-          // consulta de inserci&oacute;n en la BD
-          $sql = "INSERT INTO ACTORES (codact,dni, nombre, salario, fechnaci)
-                VALUES ('$cod_act1','$dni', '$nombre', '$salario', '$fech_naci') ";
-          insertarPersona($conexion, $sql);
-          header('Location: index.php?oper=insertar');
-          include "vista_actores.php";
-          exit();
-          
-          
-      }
-
-
+    /* Borrar */
 
     if (isset($_GET['oper']) && $_GET['oper'] == 'borrar')
     {
@@ -89,7 +27,65 @@
           exit();
      }
       
-      
+    /* Insertar */
+
+    if (isset($_GET['oper']) && $_GET['oper'] == 'insertar')
+      {
+          $msg = 'Registro insertado correctamente';
+      }
+
+      // se ha hecho click en el enlace Insertar
+      if (isset($_GET['opcion']) && $_GET['opcion'] == 'inser')
+      {
+          include "form_insertar.php";
+          exit();
+      }
+    
+        if (isset($_POST['insertar']))
+        {
+          // recoger los datos del formulario y validar
+          $nombre = trim($_POST['nombre']);
+          $dni = trim($_POST['dni']);
+          $fech_naci = trim($_POST['fechnaci']);
+          $errores = array();
+           
+         
+         if (empty($nombre))
+         {
+             $errores['nombre'] = "Introduzca un nombre";
+         }
+         if (empty($dni))
+         {
+             $errores['dni'] = "Introduzca un dni";
+         }
+          if (!empty($errores))
+          {
+              include "form_insertar.php";
+              exit();
+          }
+        
+         
+            $nombre = mysqli_real_escape_string($conexion, $nombre);
+            $dni = mysqli_real_escape_string($conexion, $dni);
+            $fech_naci = mysqli_real_escape_string($conexion, $fech_naci);
+            $sql_1="select count(*) as codact1 from actores";
+            $cod_act = obtenerPeliculas($conexion, $sql_1);
+            //$total=0;
+            foreach ($cod_act as $cod_act1){
+                $cod_act1=$cod_act1['codact1'] + 1;
+            }
+            $cod_act1 = mysqli_real_escape_string($conexion, $cod_act1);
+            // consulta de inserci&oacute;n en la BD
+    
+            // consulta de inserci&oacute;n en la BD
+            $sql = "INSERT INTO ACTORES (codact,dni, nombre, fechnaci)
+                  VALUES ('$cod_act1','$dni', '$nombre', '$fech_naci') ";
+            insertarPersona($conexion, $sql);
+            header('Location: index.php?oper=insertar');
+            exit();
+      }
+
+    /* Listar */ 
     
     if (isset($_GET['opcion']) && $_GET['opcion'] == 'actores') 
         {
@@ -99,6 +95,7 @@
               exit();
         }
         
+    /* Buscar */
 
     if (isset($_POST['enviar']))
     {
@@ -157,6 +154,7 @@
               exit();
           }
 
+    /* Inicio */
 
           $sql = "SELECT titulo,duracion,fechestreno FROM peliculas";
           $peliculas = obtenerPeliculas($conexion, $sql);
