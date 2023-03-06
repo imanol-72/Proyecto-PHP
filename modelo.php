@@ -39,5 +39,16 @@
           }
           return $actores;
       }
+      function insertarPersona($conexion, $sql)
+      {
+          $resul = mysqli_query($conexion, $sql);
+          if (!$resul) // ha ocurrido un error
+          {
+              $error = "Error en consulta de inserci&oacute;n - " . mysqli_error($conexion);
+              include "error.php";
+              exit();
+          }
+      }
+       
       
 ?>
