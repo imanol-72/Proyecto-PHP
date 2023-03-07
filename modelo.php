@@ -19,7 +19,16 @@
           }
           return $peliculas;
       }
-      
+         function borrarPelicula($conexion, $sql)
+      {
+          $resul = mysqli_query($conexion, $sql);
+          if (!$resul) // ha ocurrido un error
+          {
+              $error = "Error en consulta de borrado - " . mysqli_error($conexion);
+              include "error.php";
+              exit();
+          }
+      }
       function obtenerActores($conexion, $sql)
       {
 
